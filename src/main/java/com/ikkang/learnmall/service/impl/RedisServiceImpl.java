@@ -3,12 +3,14 @@ package com.ikkang.learnmall.service.impl;
 import com.ikkang.learnmall.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * Redis操作实现类
  */
+@Service
 public class RedisServiceImpl implements RedisService {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;

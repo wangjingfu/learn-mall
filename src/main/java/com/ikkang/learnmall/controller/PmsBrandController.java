@@ -25,14 +25,14 @@ public class PmsBrandController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PmsBrandController.class);
 
-    @ApiOperation(value = "获取所有品牌列表", tags = "获取所有品牌列表")
+    @ApiOperation(value = "获取所有品牌列表")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsBrand>> getBrandList() {
         return CommonResult.success(pmsBrandService.listAllBrand());
     }
 
-    @ApiOperation(value = "创建品牌", tags = "创建品牌")
+    @ApiOperation(value = "创建品牌")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult createBrand(@RequestBody PmsBrand pmsBrand) {
@@ -48,7 +48,7 @@ public class PmsBrandController {
         return commonResult;
     }
 
-    @ApiOperation(value = "根据品牌id更新", tags = "根据品牌id更新")
+    @ApiOperation(value = "根据品牌id更新")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateBrand(@PathVariable("id") Long id, @RequestBody PmsBrand pmsBrand, BindingResult result) {
@@ -64,7 +64,7 @@ public class PmsBrandController {
         return commonResult;
     }
 
-    @ApiOperation(value = "根据品牌id删除", tags = "根据品牌id删除")
+    @ApiOperation(value = "根据品牌id删除")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult deleteBrand(@PathVariable("id") Long id) {
@@ -80,7 +80,7 @@ public class PmsBrandController {
         return commonResult;
     }
 
-    @ApiOperation(value = "分页查询品牌信息", tags = "分页查询品牌信息")
+    @ApiOperation(value = "分页查询品牌信息")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<PmsBrand>> listBrand(
